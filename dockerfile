@@ -8,13 +8,13 @@ ENV GO111MODULE=on\
 
 WORKDIR /worktools_srvs
 
-VOLUME /opt/log
+# VOLUME /opt/log
 
 COPY  . /worktools_srvs
 
 
 STOPSIGNAL SIGINT
 
-EXPOSE 8888
+EXPOSE 50051
 
 ENTRYPOINT ["./worktools_srvs"]
