@@ -37,13 +37,13 @@ func RegisterConsul() {
 	registration.ID = srvID
 	registration.Port = int(global.ServerConfig.Port)
 	registration.Tags = []string{"frange", "user_srv"}
-	// registration.Address = global.ServerConfig.Host
-	registration.Address = "114.116.50.177"
+	registration.Address = global.ServerConfig.Host
+	// registration.Address = "114.116.50.177"
 
 	registration.Check = &api.AgentServiceCheck{
 		Method: "TCP",
-		TCP:    fmt.Sprintf("%s:%d", "114.116.50.177", global.ServerConfig.Port),
-		// TCP:                            fmt.Sprintf("%s:%d", global.ServerConfig.Host, global.ServerConfig.Port),
+		// TCP:                            fmt.Sprintf("%s:%d", "114.116.50.177", global.ServerConfig.Port),
+		TCP:                            fmt.Sprintf("%s:%d", global.ServerConfig.Host, global.ServerConfig.Port),
 		Timeout:                        "5s",
 		Interval:                       "5s",
 		DeregisterCriticalServiceAfter: "15s",
