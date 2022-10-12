@@ -18,3 +18,4 @@ STOPSIGNAL SIGINT
 EXPOSE 50051
 
 ENTRYPOINT ["./worktools_srvs"]
+CMD [ "-e" "pro"]

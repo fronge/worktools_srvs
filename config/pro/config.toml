@@ -1,0 +1,15 @@
+
+[Server]
+Host = "114.116.50.177"
+Port = 50051
+
+[MYSQL]
+Host        = "114.116.50.177"
+Port        = 3306
+DB          = "worktools"
+Name        = "root"
+Password    = "123456"
+
+[Consul]
+Host        = "114.116.50.177"
+Port        = 8500
