@@ -4,7 +4,11 @@
 *.dll
 *.so
 *.dylib
-
+.vscode/*
+*.txt
+*.doc
+*.xlsx
+*.xls
 # Test binary, built with `go test -c`
 *.test
 

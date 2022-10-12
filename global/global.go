@@ -16,6 +16,7 @@ var (
 )
 
 func init() {
+	// TODO 改为配置中心配置
 	dsn := "root:BxpkiGWXa69siulK@tcp(114.116.50.177:3340)/worktools?charset=utf8mb4&parseTime=True&loc=Local"
 
 	newLogger := logger.New(

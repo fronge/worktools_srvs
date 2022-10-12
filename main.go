@@ -11,6 +11,7 @@ import (
 )
 
 func main() {
+	// TODO 改为nacos配置中心
 	IP := flag.String("ip", "0.0.0.0", "ip地址")
 	Port := flag.Int("port", 50051, "端口号")
 	flag.Parse()
