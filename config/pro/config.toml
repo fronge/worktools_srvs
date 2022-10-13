@@ -18,3 +18,4 @@ Port        = 8500
 [Logger]
 Dir = "/opt/log"
 FileName = "user_srv.log"
+Level = "info"
