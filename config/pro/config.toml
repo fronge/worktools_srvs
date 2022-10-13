@@ -6,10 +6,10 @@ Name = "user_srv"
 
 [MYSQL]
 Host        = "114.116.50.177"
-Port        = 3306
+Port        = 3340
 DB          = "worktools"
 Name        = "root"
-Password    = "123456"
+Password    = "BxpkiGWXa69siulK"
 
 [Consul]
 Host        = "114.116.50.177"
