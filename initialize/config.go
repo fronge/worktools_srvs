@@ -52,4 +52,10 @@ func InitConfig() {
 	consulCfg := viper.GetStringMap("consul")
 	global.ServerConfig.ConsulInfo.Port = consulCfg["port"].(int64)
 	global.ServerConfig.ConsulInfo.Host = consulCfg["host"].(string)
+
+	// Logger
+	logCfg := viper.GetStringMap("logger")
+	global.ServerConfig.LoggerInfo.Dir = logCfg["dir"].(string)
+	global.ServerConfig.LoggerInfo.FileName = logCfg["filename"].(string)
+	global.ServerConfig.LoggerInfo.Level = logCfg["level"].(string)
 }

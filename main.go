@@ -17,8 +17,8 @@ import (
 )
 
 func main() {
-	initialize.InitLogger()
 	initialize.InitConfig()
+	initialize.InitLogger()
 	initialize.InitMySQL()
 
 	zap.S().Info(fmt.Sprintf("正在开启服务 %s:%d", global.ServerConfig.Host, global.ServerConfig.Port))
@@ -30,9 +30,11 @@ func main() {
 	if err != nil {
 		panic("failed to listen:" + err.Error())
 	}
-
-	libraries.HealthCheck(server)
-	libraries.RegisterConsul()
+	// 只在线上使用consul
+	if initialize.ENV == initialize.PRO {
+		libraries.HealthCheck(server)
+		libraries.RegisterConsul()
+	}
 
 	// 运行服务
 	go func() {
@@ -47,8 +49,11 @@ func main() {
 	quit := make(chan os.Signal)
 	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
 	<-quit
-	if err = libraries.ConsulServiceDeregister(); err != nil {
-		zap.S().Info("注销失败")
+	// 线上的需要注销consul
+	if initialize.ENV == initialize.PRO {
+		if err = libraries.ConsulServiceDeregister(); err != nil {
+			zap.S().Info("注销失败")
+		}
 	}
 	zap.S().Info("注销成功")
 }

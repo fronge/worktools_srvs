@@ -14,3 +14,8 @@ Password    = "BxpkiGWXa69siulK"
 [Consul]
 Host        = "114.116.50.177"
 Port        = 8500
+
+[Logger]
+Dir = "/opt/log"
+FileName = "user_srv.log"
+Level = "info"

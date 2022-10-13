@@ -8,7 +8,7 @@ ENV GO111MODULE=on\
 
 WORKDIR /worktools_srvs
 
-# VOLUME /opt/log
+VOLUME /opt/log
 
 COPY  . /worktools_srvs
 
