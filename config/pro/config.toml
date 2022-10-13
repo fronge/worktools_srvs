@@ -2,6 +2,7 @@
 [Server]
 Host = "114.116.50.177"
 Port = 50051
+Name = "user_srv"
 
 [MYSQL]
 Host        = "114.116.50.177"
@@ -13,3 +14,7 @@ Password    = "123456"
 [Consul]
 Host        = "114.116.50.177"
 Port        = 8500
+
+[Logger]
+Dir = "/opt/log"
+FileName = "user_srv.log"
