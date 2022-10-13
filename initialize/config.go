@@ -25,7 +25,6 @@ func InitConfig() {
 	if len(ENV) == 0 {
 		panic("Not found ENV")
 	}
-
 	path := filepath.Join(".", "config", ENV)
 	viper.SetConfigName("config")
 	viper.AddConfigPath(path)
