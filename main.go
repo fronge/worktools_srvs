@@ -26,7 +26,7 @@ func main() {
 	server := grpc.NewServer()
 	proto.RegisterUserServer(server, &handler.UserServer{})
 
-	lis, err := net.Listen("tcp", fmt.Sprintf("%s:%d", global.ServerConfig.Host, global.ServerConfig.Port))
+	lis, err := net.Listen("tcp", fmt.Sprintf("%s:%d", "0.0.0.0", global.ServerConfig.Port))
 	if err != nil {
 		panic("failed to listen:" + err.Error())
 	}
